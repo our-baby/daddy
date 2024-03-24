@@ -14,4 +14,10 @@
 
 ## Authors
 
-- [@mgYang53](https://www.github.com/mgYang53)
+<table>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://www.github.com/mgYang53"><img src="https://avatars.githubusercontent.com/u/50770004?v=4" width="100px" alt="양명규 프로필이미지"/><br /><sub><b>양명규</b>(@mgYang53)</sub></a><br /></td>
+     <tr/>
+  </tbody>
+</table>
