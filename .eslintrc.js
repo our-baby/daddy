@@ -49,7 +49,6 @@ module.exports = {
     'unused-imports/no-unused-imports': 'error', // 사용되지 않는 import 문을 검사하여 코드베이스에서 불필요한 import 문을 감지
     'require-await': 'error', // async 사용 시 await 사용 필수
     '@typescript-eslint/no-unused-vars': 'off', // 타입 스크립트 사용 시 인터페이스 충돌 방지
-    'react-refresh/only-export-components': 'warn', //   React.memo, React.forwardRef, React.lazy 등과 같은 React의 고급 기능을 사용하지 않는 경우에 발생할 수 있는 경고를 나타냅니다. 이러한 고급 기능을 사용할 때 Fast Refresh와 호환성 문제가 발생할 수 있으므로, 이 규칙은 개발자에게 해당 부분을 검토
     'react-hooks/rules-of-hooks': 'error', // React Hooks 사용에 관련된 규칙 적용
     'react-hooks/exhaustive-deps': 'warn', // React Hooks의 useEffect 함수에서 의존성 배열을 검사
     'no-console': 'warn', // 빈 콘솔에 대한 경고

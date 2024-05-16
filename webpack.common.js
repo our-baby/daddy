@@ -21,15 +21,21 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(jsx|ts|tsx)$/i,
+        test: /\.(ts|tsx)$/i,
         exclude: /(node_modules)/,
-        use: {
-          loader: 'swc-loader',
-        },
+        use: ['swc-loader', 'ts-loader'],
+        // use: {
+        //   loader: 'swc-loader',
+        // },
       },
       {
         test: /\.(png|jpe?g|svg|gif|webp)$/i,
-        type: 'asset/resource', // type을 통해 Webpack에 내장된 로더(Builtin Loader) 명시
+        type: 'asset', // 40KB(default) 미만은 inline, 이상은 resource로 대처
+        parser: {
+          dataUrlCondition: {
+            maxSize: 20 * 1024, // 기준을 20KB 로 변경
+          },
+        },
       },
     ],
   },
