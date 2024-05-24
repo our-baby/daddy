@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import theme from '@/shared/theme';
 
 export const Wrapper = styled.header`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgb(0, 0, 0);
+  background-color: ${theme.colors.bgColor};
   z-index: 999;
   border-bottom: 1px solid rgb(54, 54, 54);
 `;
@@ -34,8 +35,8 @@ export const LoginBtn = styled.button`
   line-height: 1.25rem;
   font-weight: 400;
   padding: 6px 16px;
-  border: 1px solid rgb(255, 255, 255);
+  border: 1px solid #000;
   border-radius: 8px;
   background-color: transparent;
-  color: rgb(255, 255, 255);
+  color: #000;
 `;

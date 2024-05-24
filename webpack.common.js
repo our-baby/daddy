@@ -29,13 +29,31 @@ module.exports = {
         // },
       },
       {
-        test: /\.(png|jpe?g|svg|gif|webp)$/i,
+        test: /\.(png|jpe?g|gif|webp)$/i,
         type: 'asset', // 40KB(default) 미만은 inline, 이상은 resource로 대처
         parser: {
           dataUrlCondition: {
             maxSize: 20 * 1024, // 기준을 20KB 로 변경
           },
         },
+      },
+      {
+        test: /\.svg$/,
+        oneOf: [
+          {
+            use: ['@svgr/webpack'],
+            issuer: /\.[jt]sx?$/,
+            resourceQuery: { not: [/url/] },
+          },
+          {
+            type: 'asset',
+            resourceQuery: /url/, // *.svg?url
+          },
+        ],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
       },
     ],
   },

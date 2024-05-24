@@ -4,7 +4,7 @@ const colors = {
   main: '#ddd',
   sub: '#eee',
   color: '',
-  bgColor: '',
+  bgColor: 'rgb(236, 240, 241)',
 };
 
 /** 검정 배경 */
