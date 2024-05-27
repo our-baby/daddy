@@ -3,6 +3,8 @@ import { Wrapper, Inner, LogoBox, Logo, LoginBtn } from './style';
 import LogoImg from '/static/logo.png';
 
 function Header() {
+  console.log(API_BASE_PATH);
+
   return (
     <Wrapper>
       <Inner>
