@@ -1,7 +1,17 @@
 import React from 'react';
-import GNB from './nav';
+import styled from 'styled-components';
 import { Outlet } from 'react-router-dom';
+import theme from '@/shared/theme';
+import GNB from './nav';
 import Header from './header';
+
+const Main = styled.main`
+  width: calc(100% - 240px);
+  height: calc(100% - 56px);
+  margin-top: 56px;
+  margin-left: 240px;
+  background-color: ${theme.colors.bgColor};
+`;
 
 function Layout() {
   return (
@@ -10,9 +20,9 @@ function Layout() {
       <aside>
         <GNB />
       </aside>
-      <main>
+      <Main>
         <Outlet />
-      </main>
+      </Main>
     </>
   );
 }
