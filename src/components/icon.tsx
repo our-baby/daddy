@@ -2,13 +2,14 @@
 import { ReactElement } from 'react';
 
 // 사용할 icon 이름들
-export type iconName =
+type iconName =
   | 'tag_all'
   | 'tag_pregnancy'
   | 'tag_birth'
   | 'tag_parenting'
   | 'tag_policy'
-  | 'tag_health';
+  | 'tag_health'
+  | 'close_icon';
 
 type icon = {
   content: Array<ReactElement>;
@@ -89,6 +90,18 @@ const IconSet: Record<iconName, icon> = {
       />,
     ],
     viewBox: '0 0 20 20',
+  },
+  close_icon: {
+    content: [
+      <path
+        key="1"
+        d="M21 7L7 21M7 7L21 21"
+        stroke="#979797"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"></path>,
+    ],
+    viewBox: '0 0 28 28',
   },
 };
 

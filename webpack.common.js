@@ -1,8 +1,13 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const dotenv = require('dotenv');
 const distDir = path.resolve(__dirname, 'dist');
 const srcDir = path.resolve(__dirname, 'src');
 const staticDir = path.resolve(__dirname, 'static');
+
+const { NODE_ENV } = process.env;
+dotenv.config({ path: `./.env.${NODE_ENV}` });
 
 module.exports = {
   mode: 'development',
@@ -62,6 +67,12 @@ module.exports = {
       template: 'public/index.html',
       hash: true,
       favicon: `${staticDir}/favicon.ico`,
+    }),
+    new webpack.DefinePlugin({
+      API_BASE_PATH: JSON.stringify(process.env.API_BASE_PATH),
+      APP_BASE_URL: JSON.stringify(process.env.APP_BASE_URL),
+      NAVER_APP_CLIENT_ID: JSON.stringify(process.env.NAVER_APP_CLIENT_ID),
+      NAVER_LOGIN_CALLBACK_PATH: JSON.stringify(process.env.NAVER_LOGIN_CALLBACK_PATH),
     }),
   ],
   devtool: 'inline-source-map',
