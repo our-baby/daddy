@@ -69,7 +69,7 @@ module.exports = {
       favicon: `${staticDir}/favicon.ico`,
     }),
     new webpack.DefinePlugin({
-      API_BASE_PATH: JSON.stringify(process.env.API_BASE_PATH),
+      API_BASE_URL: JSON.stringify(process.env.API_BASE_URL),
       APP_BASE_URL: JSON.stringify(process.env.APP_BASE_URL),
       NAVER_APP_CLIENT_ID: JSON.stringify(process.env.NAVER_APP_CLIENT_ID),
       NAVER_LOGIN_CALLBACK_PATH: JSON.stringify(process.env.NAVER_LOGIN_CALLBACK_PATH),

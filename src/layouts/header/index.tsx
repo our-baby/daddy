@@ -4,7 +4,6 @@ import LogoImg from '/static/logo.png';
 import LoginModal from '@/components/modal/LoginModal';
 
 function Header() {
-  // console.log(API_BASE_PATH);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
   const onClickLoginBtn = () => {
