@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// useEffect 와 같이 기본으로 제공하는 훅이기에 같이 import 해주자.
 import { useEffect, useRef } from 'react';
 import naverIcon from '@/assets/images/naver_icon.png';
 
@@ -20,18 +19,12 @@ const NaverLogin = () => {
       callbackHandle: true,
     });
     naverLogin.init();
-  };
-
-  const userAccessToken = () => {
-    window.location.href.includes('access_token') && getToken();
-  };
-  const getToken = () => {
-    const token = window.location.href.split('=')[1].split('&')[0];
+    const logoutPopup = window.open('http://nid.naver.com/nidlogin.logout');
+    logoutPopup?.close();
   };
 
   useEffect(() => {
     initializeNaverLogin();
-    userAccessToken();
   }, []);
 
   // handleClick 함수 onClick 이벤트 발생 시 useRef 를 통해 지정한 naverRef 항목이 클릭 된다.
