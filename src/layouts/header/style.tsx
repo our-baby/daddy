@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import theme from '@/shared/theme';
+import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.header`
   position: fixed;
@@ -18,15 +19,24 @@ export const Inner = styled.div`
   padding: 8px 16px;
 `;
 
-export const LogoBox = styled.h1`
-  width: 40px;
-`;
-
-export const Logo = styled.a`
+export const Logo = styled(Link)`
   display: flex;
+  align-items: center;
 
   & img {
     max-width: 100%;
+    height: 32px;
+  }
+
+  & img:last-child {
+    margin-left: 10px;
+    height: 24px;
+  }
+`;
+
+export const HeaderUtilCon = styled.ul`
+  & li {
+    display: flex;
   }
 `;
 
@@ -39,4 +49,14 @@ export const LoginBtn = styled.button`
   border-radius: 8px;
   background-color: transparent;
   color: #000;
+`;
+
+export const MembershipBtn = styled.button`
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
 `;
