@@ -5,12 +5,13 @@ import useAuthStore from './store/AuthStore';
 
 function App() {
   const { accessToken } = useAuthStore();
+  const { id, email, nickname, joinType } = useUserStore.getState();
+  const user = id ? { id, email, nickname, joinType } : null;
 
   // 멤버 api 조회 parameter 얻은 후 작업 예정
   if (accessToken) {
-    const user = useUserStore.getState();
     console.log(user);
-    if (!user.id) {
+    if (!user) {
       // const response = await axiosInstance.post(`/members/${seq}`, params, {
       //   headers: {
       //     'certificated-token': accessToken,
@@ -19,7 +20,7 @@ function App() {
     }
   }
 
-  return <Routes />;
+  return <Routes user={user} />;
 }
 
 export default App;
