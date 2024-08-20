@@ -1,5 +1,7 @@
 import { css } from 'styled-components';
 
+const headerHeight = '49px';
+
 const colors = {
   main: '#ddd',
   sub: '#eee',
@@ -78,6 +80,7 @@ const util = {
 };
 
 const theme = {
+  headerHeight,
   colors,
   mediaSize,
   fontSize,

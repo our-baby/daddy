@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
 import theme from '@/shared/theme';
+import { Link } from 'react-router-dom';
 
 const Wrapper = styled.li`
   display: flex;
@@ -9,7 +10,7 @@ const Wrapper = styled.li`
   width: 100%;
 `;
 
-const NavStyle = styled.a`
+const NavStyle = styled(Link)`
   position: relative;
   display: flex;
   align-items: center;
@@ -66,7 +67,7 @@ function NavItem(props: { item: MenuInfo }) {
 
   return (
     <Wrapper>
-      <NavStyle href={to} className={isActive(activeParam) ? 'active' : ''}>
+      <NavStyle to={to} className={isActive(activeParam) ? 'active' : ''}>
         {imgEl}
         <span>{text}</span>
       </NavStyle>

@@ -1,30 +1,50 @@
 import React, { useState } from 'react';
-import { Wrapper, Inner, LogoBox, Logo, LoginBtn } from './style';
+import { Wrapper, Inner, Logo, HeaderUtilCon, LoginBtn, MembershipBtn } from './style';
 import LogoImg from '/static/logo.png';
+import LogoImgText from '/static/logo_text.png';
 import LoginModal from '@/components/modal/LoginModal';
+import useAuthStore from '@/store/AuthStore';
 
 function Header() {
-  // console.log(API_BASE_PATH);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const { accessToken, resetTokens } = useAuthStore();
 
   const onClickLoginBtn = () => {
     setIsLoginModalOpen(true);
+  };
+
+  const onClickLogoutBtn = () => {
+    resetTokens();
+  };
+
+  const onClickMemberBtn = () => {
+    location.replace('/mypage');
   };
 
   return (
     <>
       <Wrapper>
         <Inner>
-          <LogoBox>
-            <Logo>
+          <h1>
+            <Logo to="/">
               <img src={LogoImg} alt="Our Baby" />
+              <img src={LogoImgText} alt="Our Baby" />
             </Logo>
-          </LogoBox>
-          <ul>
+          </h1>
+          <HeaderUtilCon>
             <li>
-              <LoginBtn onClick={onClickLoginBtn}>로그인</LoginBtn>
+              {accessToken ? (
+                // 프로필 이미지 받아오면 처리
+                // <MembershipBtn
+                //   // style={{ backgroundImage: '' }}
+                //   style={{ backgroundColor: 'blue' }}
+                //   onClick={onClickMemberBtn}></MembershipBtn>
+                <LoginBtn onClick={onClickLogoutBtn}>로그아웃</LoginBtn>
+              ) : (
+                <LoginBtn onClick={onClickLoginBtn}>로그인</LoginBtn>
+              )}
             </li>
-          </ul>
+          </HeaderUtilCon>
         </Inner>
       </Wrapper>
       {isLoginModalOpen && <LoginModal onClose={() => setIsLoginModalOpen(false)} />}
