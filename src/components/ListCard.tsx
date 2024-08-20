@@ -16,10 +16,16 @@ const Thumbnail = styled.div`
   background-color: gray;
   border-radius: 5px;
   margin-bottom: 10px;
+  padding-top: 62.5%;
 `;
 
 const TextBox = styled.div`
   background-color: white;
+`;
+
+const Title = styled.div`
+  font-size: 16px;
+  font-weight: 500;
 `;
 
 function ListCard() {
@@ -27,7 +33,9 @@ function ListCard() {
     <Wrapper>
       <Inner>
         <Thumbnail></Thumbnail>
-        <TextBox></TextBox>
+        <TextBox>
+          <Title>게시글 제목</Title>
+        </TextBox>
       </Inner>
     </Wrapper>
   );
