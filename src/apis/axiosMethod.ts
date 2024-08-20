@@ -1,6 +1,8 @@
 import { AxiosRequestConfig } from 'axios';
-import axiosInstance from '.';
+import { axiosInstance } from '.';
 import { APIResponse } from '@/types/commonResponse';
+
+// authInstance 옵션 처리 필요
 
 /**
  * GET 메소드
