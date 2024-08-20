@@ -43,6 +43,7 @@ module.exports = {
         },
       },
       {
+        // svg 파일 뒤에 ?url 붙이지 않으면 react 컴포넌트로 처리
         test: /\.svg$/,
         oneOf: [
           {
