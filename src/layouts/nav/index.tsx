@@ -6,10 +6,10 @@ import Icon from '@/components/icon';
 
 const Wrapper = styled.nav`
   position: fixed;
-  top: 56px;
+  top: ${theme.headerHeight};
   left: 0;
   width: 240px;
-  min-height: calc(100vh - 56px);
+  min-height: calc(100vh - ${theme.headerHeight});
   display: flex;
   flex-direction: column;
   background-color: ${theme.colors.bgColor};
